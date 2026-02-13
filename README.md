@@ -1,52 +1,72 @@
 # Titanic-NLP-Survival-Prediction
-This project uses Natural Language Processing (NLP) techniques to predict passenger survival on the Titanic dataset. Text data is cleaned, converted into numerical features using TF-IDF / CountVectorizer, and a machine learning classifier is trained to make predictions.
-Text Cleaning
 
-## Text data is preprocessed before modeling:
+NLP-based Titanic survival prediction using text preprocessing, TF-IDF vectorization, and Logistic Regression achieving 73.18% accuracy.
+This project applies Natural Language Processing (NLP) techniques to predict passenger survival on the Titanic dataset. Text data is cleaned, transformed using TF-IDF vectorization, and used to train a Logistic Regression classifier.
 
-Convert text to lowercase
+The project demonstrates a complete NLP pipeline including preprocessing, feature extraction, model training, and evaluation.
 
-Remove punctuation
+## Dataset
 
-Remove stopwords (like “the”, “is”)
+Dataset: Titanic dataset
 
-Tokenization (split text into words)
+Target Variable: Survived (0 = No, 1 = Yes)
 
-Lemmatization / Stemming (reduce words to root form)
+Text Feature Used: Passenger Name column
 
-This helps improve model performance.
+## Text Cleaning
 
-## Feature Extraction
+The following preprocessing steps were applied:
+Convert text to lowercase, Remove special characters, Remove stopwords, Tokenization, Lemmatization
 
-Since machine learning models need numbers, text is converted into numerical form using:
+## Feature Extraction (TF-IDF)
 
-CountVectorizer – Converts text into word frequency counts.
+Text was converted into numerical format using TF-IDF (Term Frequency – Inverse Document Frequency).
 
-TF-IDF – Assigns importance to words based on how frequently they appear.
+TF-IDF helps assign importance to meaningful words while reducing the impact of common words.
 
-TF-IDF usually performs better because it reduces the impact of common words.
+## Model Training
 
-## Train Classifier
+Data split into training and testing sets (80:20)
 
-Split data into training and testing sets
+Logistic Regression classifier trained on TF-IDF features
 
-Train a model (Logistic Regression / Naive Bayes, etc.)
+##  Model Evaluation
 
-Predict survival on test data
+The model was evaluated using Accuracy, Classification Report, and Confusion Matrix.
 
-## Evaluate Accuracy
+## Model Performance
 
-Accuracy checks how many predictions are correct.
+Accuracy: 73.18%
 
-Accuracy = Correct Predictions ÷ Total Predictions
+Precision (Class 0): 0.70
 
-Example:
-If 80 out of 100 predictions are correct → Accuracy = 80%
+Recall (Class 0): 0.95
+
+Precision (Class 1): 0.86
+
+Recall (Class 1): 0.42
+
+🔎 Confusion Matrix
+[[100   5]
+ [ 43  31]]
+
+
+This shows:
+
+100 correct non-survival predictions
+
+31 correct survival predictions
+
+5 false positives
+
+43 false negatives
 
 ## Technologies Used
 
-Python, Pandas, Scikit-learn, NLTK, Matplotlib / Seaborn
 
-📊 Result
+Python, Pandas, Scikit-learn, NLTK, TF-IDF Vectorizer, Logistic Regression
 
-The model successfully predicts passenger survival using processed text features. TF-IDF showed better performance compared to basic word counts.
+
+
+
+
